@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/hom_nav"
+         android:title="@string/home"
+         android:icon="@drawable/home_state"
+        android:contentDescription="@string/home"/>
+
+    <item android:id="@+id/live_nav"
+        android:title="@string/live"
+        android:icon="@drawable/live_state"
+        android:contentDescription="@string/live"/>
+
+    <item android:id="@+id/message_nav"
+        android:title="@string/message"
+        android:icon="@drawable/mess_state"
+        android:contentDescription="@string/message"/>
+
+    <item android:id="@+id/cart_nav"
+        android:title="@string/cart"
+        android:icon="@drawable/cart_state"
+        android:contentDescription="@string/cart"/>
+
+    <item android:id="@+id/account_nav"
+        android:title="@string/account"
+        android:icon="@drawable/account_state"
+        android:contentDescription="@string/account"/>
+</menu>

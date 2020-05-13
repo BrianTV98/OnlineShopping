@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">OnlineShopping</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="all_text_login">Đăng nhập</string>
+    <string name="text_all_register">Đăng ký</string>
+    <string name="text_intro">Online Shopping is develop by Tran Van Hieu</string>
+    <string name="phoneNumber">Số điện thoại</string>
+    <string name="numberCountry">+84 |</string>
+    <string name="verification_email">Email xác thực</string>
+    <string name="verification">Xác thực</string>
+    <string name="all_text_forgot_password">Quên Mật khẩu</string>
+    <string name="user_name">Tên đăng nhập</string>
+    <string name="email">Email</string>
+    <string name="all_text_password">Mật khẩu</string>
+    <string name="all_text_confirm_password">Xác nhận mật khẩu</string>
+    <string name="home">Trang chủ</string>
+    <string name="live">live</string>
+    <string name="message">Tin nhắn</string>
+    <string name="cart">Cart</string>
+    <string name="account">Account</string>
+    <string name="mycoin">Xu của tôi</string>
+    <string name="reciver_coin">Nhận xu</string>
+    <string name="coin_register">Đăng kí tài khoản</string>
+    <string name="discount_delivery">Giảm giá vận chuyển</string>
+    <string name="deal0D">Săn deal 0D</string>
+    <string name="tv_banner_account">Đăng nhập đột phá mọi trải nghiệm!</string>
+    <string name="my_orther">Đơn hàng của tôi</string>
+    <string name="all_orther"><![CDATA[Xem tất cả đơn hàng >]]></string>
+    <string name="wait_pay">Chờ thanh toán</string>
+    <string name="wait_delivery">Chờ vận chuyển</string>
+    <string name="waiting_delivery">Chờ giao hàng</string>
+    <string name="comment_rate">Đánh giá</string>
+    <string name="orther_comeback">Đơn hàng đổi trả</string>
+    <string name="orther_cancel">Đơn hàng đổi trả</string>
+    <string name="e_m_discount">"Tận hưởng Ví eM! "</string>
+    <string name="my_comment_rate">Đánh giá của tôi</string>
+    <string name="payment_options">Tùy chọn thanh toán</string>
+    <string name="help">Trợ giúp</string>
+    <string name="chat_with_cleo">Chat với CLEO</string>
+    <string name="sales_with_online_shoping">Bán hàng với Shop </string>
+    <string name="voucher_purchased">evoucher đã mua</string>
+    <string name="scratch_card">Thẻ cào điện thoại</string>
+    <string name="my_service">Dịch vụ của tôi</string>
+    <string name="login_register">Đăng nhập/ Đăng ký </string>
+    <string name="scanner">Quét</string>
+</resources>

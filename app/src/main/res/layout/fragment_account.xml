@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/transparent"
+    tools:context=".AccountFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_height="wrap_content">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="30dp"
+                android:src="@drawable/ic_account_white"
+                android:layout_weight="0"
+                android:layout_height="30dp"/>
+            <TextView
+                android:text="@string/tv_banner_account"
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/default_margin_normal"
+                android:layout_height="wrap_content"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="wrap_content"
+                android:layout_weight="0"
+                android:layout_marginEnd="@dimen/default_margin_normal"
+                android:src="@drawable/ic_settings_applications_white_24dp"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <include layout="@layout/banner_register_layout"/>
+            <include layout="@layout/coin_layout"/>
+            <include layout="@layout/my_orther_layout"/>
+            <include layout= "@layout/wallet_em_layout"/>
+            <include layout="@layout/my_service_layout"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

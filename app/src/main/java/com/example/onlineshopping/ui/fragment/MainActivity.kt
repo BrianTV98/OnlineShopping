@@ -1,7 +1,8 @@
-package com.example.onlineshopping
+package com.example.onlineshopping.ui.fragment
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.onlineshopping.R
 
 class MainActivity : AppCompatActivity() {
 

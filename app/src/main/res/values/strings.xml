@@ -45,4 +45,11 @@
     <string name="my_service">Dịch vụ của tôi</string>
     <string name="login_register">Đăng nhập/ Đăng ký </string>
     <string name="scanner">Quét</string>
+    <string name="err_login">Sai tên đăng nhập hoặc mật khẩu</string>
+    <string name="first_name">Họ tên</string>
+    <string name="err_email">Email nhập không hợp lẹ</string>
+    <string name="err_null">Không được để trống mục này</string>
+    <string name="err_not_phone">Vui lòng nhập chính xác số điện thoại</string>
+    <string name="err_not_password">Password không hợp lẹ</string>
+    <string name="err_confirmpass">Vui lòng xác nhận lại pass word</string>
 </resources>

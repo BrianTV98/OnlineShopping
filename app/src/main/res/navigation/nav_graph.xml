@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/introFragment">
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.onlineshopping.MainFragment"
+        android:name="com.example.onlineshopping.ui.fragment.main.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
@@ -28,12 +28,12 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.onlineshopping.HomeFragment"
+        android:name="com.example.onlineshopping.ui.fragment.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.onlineshopping.LoginFragment"
+        android:name="com.example.onlineshopping.ui.fragment.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -45,7 +45,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.example.onlineshopping.RegisterFragment"
+        android:name="com.example.onlineshopping.ui.fragment.register.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
         <action
@@ -54,12 +54,12 @@
     </fragment>
     <fragment
         android:id="@+id/forgotPassWordFragment"
-        android:name="com.example.onlineshopping.ForgotPassWordFragment"
+        android:name="com.example.onlineshopping.ui.fragment.forgotpassword.ForgotPassWordFragment"
         android:label="fragment_forgot_pass_word"
         tools:layout="@layout/fragment_forgot_pass_word" />
     <fragment
         android:id="@+id/introFragment"
-        android:name="com.example.onlineshopping.IntroFragment"
+        android:name="com.example.onlineshopping.ui.fragment.intro.IntroFragment"
         android:label="fragment_intro"
         tools:layout="@layout/fragment_intro" >
         <action
@@ -71,27 +71,27 @@
     </fragment>
     <fragment
         android:id="@+id/snackFragment"
-        android:name="com.example.onlineshopping.SnackFragment"
+        android:name="com.example.onlineshopping.ui.fragment.Snack.SnackFragment"
         android:label="fragment_snack"
         tools:layout="@layout/fragment_snack" />
     <fragment
         android:id="@+id/messageFragment"
-        android:name="com.example.onlineshopping.MessageFragment"
+        android:name="com.example.onlineshopping.ui.fragment.message.MessageFragment"
         android:label="fragment_message"
         tools:layout="@layout/fragment_message" />
     <fragment
         android:id="@+id/cartFragment"
-        android:name="com.example.onlineshopping.CartFragment"
+        android:name="com.example.onlineshopping.ui.fragment.cart.CartFragment"
         android:label="fragment_cart"
         tools:layout="@layout/fragment_cart" />
     <fragment
         android:id="@+id/accountFragment"
-        android:name="com.example.onlineshopping.AccountFragment"
+        android:name="com.example.onlineshopping.ui.fragment.account.AccountFragment"
         android:label="fragment_account"
         tools:layout="@layout/fragment_account" />
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.example.onlineshopping.SplashFragment"
+        android:name="com.example.onlineshopping.ui.fragment.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action

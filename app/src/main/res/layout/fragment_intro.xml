@@ -1,65 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".IntroFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/logo"
-        app:layout_constraintBottom_toTopOf="@id/iv_intro"
+    <data>
+        <variable
+            name="introListenner"
+            type="com.example.onlineshopping.ui.fragment.intro.IntroListenner" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.intro.IntroFragment">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl"
-        android:layout_width="match_parent"
-        app:layout_constraintGuide_percent="0.6"
-        android:orientation="horizontal"
-        android:layout_height="0dp"/>
+        <ImageView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/logo"
+            app:layout_constraintBottom_toTopOf="@id/iv_intro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-    <TextView
-        android:id="@+id/iv_intro"
-        android:textSize="27sp"
-        android:textAlignment="center"
-        android:fontFamily="@font/montserrat"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/gl"
-        android:text="@string/text_intro"
-        android:layout_marginBottom="@dimen/default_margin_normal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl"
+            android:layout_width="match_parent"
+            app:layout_constraintGuide_percent="0.6"
+            android:orientation="horizontal"
+            android:layout_height="0dp" />
 
-    <Button
-        android:id="@+id/btn_login"
-        app:layout_constraintTop_toBottomOf="@id/gl"
-        android:background="@drawable/custom_backgroud_btn_login"
-        android:layout_width="match_parent"
-        android:text="@string/all_text_login"
-        android:textColor="@android:color/white"
-        android:textSize="14sp"
-        android:layout_marginStart="@dimen/default_margin_large"
-        android:layout_marginEnd="@dimen/default_margin_large"
-        android:textAllCaps="false"
-        android:layout_height="@dimen/default_height_button"/>
+        <TextView
+            android:id="@+id/iv_intro"
+            android:textSize="27sp"
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/gl"
+            android:text="@string/text_intro"
+            android:layout_marginBottom="@dimen/default_margin_normal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/btn_register"
-        android:background="@drawable/custom_bg_btn_register"
-        app:layout_constraintTop_toBottomOf="@id/btn_login"
-        android:text="@string/text_all_register"
-        android:layout_marginStart="@dimen/default_margin_large"
-        android:layout_marginEnd="@dimen/default_margin_large"
-        android:textAllCaps="false"
-        android:textColor="@color/colorPrimary"
-        android:textSize="14sp"
-        android:layout_marginTop="@dimen/default_margin_normal"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/default_height_button"/>
+        <Button
+            android:id="@+id/btn_login"
+            app:layout_constraintTop_toBottomOf="@id/gl"
+            android:background="@drawable/custom_backgroud_btn_login"
+            android:layout_width="match_parent"
+            android:text="@string/all_text_login"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:layout_marginStart="@dimen/default_margin_large"
+            android:layout_marginEnd="@dimen/default_margin_large"
+            android:textAllCaps="false"
+            android:onClick="@{introListenner::btnLogin}"
+            android:layout_height="@dimen/default_height_button" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/btn_register"
+            android:background="@drawable/custom_bg_btn_register"
+            app:layout_constraintTop_toBottomOf="@id/btn_login"
+            android:text="@string/text_all_register"
+            android:layout_marginStart="@dimen/default_margin_large"
+            android:layout_marginEnd="@dimen/default_margin_large"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimary"
+            android:textSize="14sp"
+            android:layout_marginTop="@dimen/default_margin_normal"
+            android:layout_width="match_parent"
+            android:onClick="@{introListenner::btnRegister}"
+            android:layout_height="@dimen/default_height_button" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

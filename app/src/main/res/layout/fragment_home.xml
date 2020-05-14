@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:focusableInTouchMode="true"
     android:orientation="vertical"
-    tools:context=".HomeFragment">
+    tools:context=".ui.fragment.home.HomeFragment">
     <!-- TODO: Update blank fragment layout -->
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
@@ -67,19 +67,21 @@
        <LinearLayout
            android:layout_width="match_parent"
            android:layout_height="wrap_content">
-           <com.github.vivchar.viewpagerindicator.ViewPagerIndicator
-               android:id="@+id/view_pager_indicator"
-               android:layout_width="match_parent"
-               android:layout_height="200dp"
-               android:layout_gravity="center_horizontal|bottom"
-               android:layout_marginBottom="20dp"
-               app:delimiterSize="8dp"
-               app:itemIcon="@drawable/ic_insert_emoticon_black_24dp"
-               app:itemScale="1.5"
-               app:itemSelectedTint="@color/colorAccent"
-               app:itemSize="16dp"
-               app:itemTint="@color/colorPrimary" />
+
+<!--           <com.github.vivchar.viewpagerindicator.ViewPagerIndicator-->
+<!--               android:id="@+id/view_pager_indicator"-->
+<!--               android:layout_width="match_parent"-->
+<!--               android:layout_height="200dp"-->
+<!--               android:layout_gravity="center_horizontal|bottom"-->
+<!--               android:layout_marginBottom="20dp"-->
+<!--               app:delimiterSize="8dp"-->
+<!--               app:itemIcon="@drawable/ic_insert_emoticon_black_24dp"-->
+<!--               app:itemScale="1.5"-->
+<!--               app:itemSelectedTint="@color/colorAccent"-->
+<!--               app:itemSize="16dp"-->
+<!--               app:itemTint="@color/colorPrimary" />-->
        </LinearLayout>
+
     </ScrollView>
 
 </LinearLayout>

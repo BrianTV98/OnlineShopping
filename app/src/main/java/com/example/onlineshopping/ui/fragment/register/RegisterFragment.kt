@@ -1,12 +1,13 @@
 package com.example.onlineshopping.ui.fragment.register
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import android.view.inputmethod.InputMethodManager
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.library.baseAdapters.BR
 import androidx.fragment.app.viewModels
@@ -37,8 +38,6 @@ class RegisterFragment : Fragment(), RegisterListenner {
         binding =
             DataBindingUtil.inflate(layoutInflater, R.layout.fragment_register, container, false)
 
-
-
         binding.viewModel = viewmodel
 
         binding.setVariable(BR.registerListenner, this)
@@ -49,49 +48,71 @@ class RegisterFragment : Fragment(), RegisterListenner {
         return binding.root
     }
 
-    override fun btnRegister(view: View) {
-        Toast.makeText(context, "adsc", Toast.LENGTH_LONG).show()
-        var email = binding.editEmail.text.toString()
-        var name = binding.editUserName.text.toString()
-        var phone = binding.editPhoneNumber.text.toString()
-        var password = binding.editPassword.text.toString()
-        var confirmpassword = binding.editConfirm.text.toString()
+    @SuppressLint("ClickableViewAccessibility")
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        var check = checkValidate(
-            email, name, phone, password, confirmpassword
-        )
-
-        if (check) {
-            /*
-                save model
-                register
-                push up user
-             */
-
-            viewmodel.user = User("", name, email, phone, password)
-            register(email, password)
-            writeNewUser(viewmodel.user)
+        binding.mainLayout.setOnTouchListener { v, event ->
+            val imm =
+                requireActivity().getSystemService(android.content.Context.INPUT_METHOD_SERVICE) as? InputMethodManager
+            imm?.hideSoftInputFromWindow(requireActivity().currentFocus?.windowToken, 0)
+            true
         }
+    }
+
+    override  fun btnRegister(view: View) {
+//        Toast.makeText(context, "adsc", Toast.LENGTH_LONG).show()
+//        val email = binding.editEmail.text.toString()
+//        val name = binding.editUserName.text.toString()
+//        val phone = binding.editPhoneNumber.text.toString()
+//        val password = binding.editPassword.text.toString()
+//        val confirmpassword = binding.editConfirm.text.toString()
+//
+//        val check = checkValidate(
+//            email, name, phone, password, confirmpassword
+//        )
+//
+//        if (check) {
+//            viewmodel.user= User("", email, name, phone, password)
+//            register(email, password)
+//        }
+         val user = User("fafsf","afdsfas","afsdfa","afsdfa","afds")
+        writeNewUser(user)
 
     }
 
     private fun writeNewUser(user: User) {
-        Firebase.database.reference.child("users").child(user.uuid!!).setValue(user)
+        Firebase.database.reference.child("users").setValue("5")
+        FirebaseDatabase.getInstance().reference.child("users").setValue("5")
+        Log.d("Register", user.email);
+        Log.d("Register", user.password);
         Log.d("Register", "uuid : ${user.uuid}")
+
     }
 
     private fun register(email: String, password: String): Boolean {
         var check = false
 
         auth.createUserWithEmailAndPassword(email, password).addOnSuccessListener {
-            viewmodel.user.uuid = it.user?.uid
-            Log.d("Register", "Register success ${it.user?.uid}")
+            /*
+               save model
+               register
+               push up user
+            */
+            viewmodel.user = User(it.user?.uid,viewmodel.user.name, viewmodel.user.email, viewmodel.user.phone, viewmodel.user.password)
+
+            Log.d("Register", "uuid ${viewmodel.user.uuid}")
+            Log.d("Register", "email ${viewmodel.user.email}")
+
+            writeNewUser(viewmodel.user)
+
             check = true
         }
             .addOnFailureListener {
                 Log.d("Register", "Register fail  ${it.toString()}")
                 check = false
             }
+
         return check
     }
 
@@ -130,8 +151,8 @@ class RegisterFragment : Fragment(), RegisterListenner {
         } else binding.loConfirmPassword.error = null
 
         Log.d("Register", "check  $check")
-        return check
 
+        return check
     }
 
 }

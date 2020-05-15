@@ -1,6 +1,8 @@
 package com.example.onlineshopping.ui.fragment.intro
 
+import android.content.Intent.getIntent
 import android.os.Bundle
+import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +12,7 @@ import androidx.databinding.library.baseAdapters.BR
 import androidx.navigation.fragment.findNavController
 import com.example.onlineshopping.R
 import com.example.onlineshopping.databinding.FragmentIntroBinding
+import com.example.onlineshopping.ui.fragment.MainActivity
 
 /**
  * A simple [Fragment] subclass.
@@ -25,6 +28,7 @@ class IntroFragment : Fragment(), IntroListenner {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(layoutInflater, R.layout.fragment_intro,container, false)
         binding.setVariable(BR.introListenner, this)
+
         return binding.root
     }
 

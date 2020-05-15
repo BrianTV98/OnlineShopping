@@ -79,7 +79,7 @@ class RegisterFragment : Fragment(), RegisterListenner {
         val user2 = User("123","afdsfa","Afdfa","afdf","afdsfa")
         //database.child("users").setValue("hi")
 //        FirebaseDatabase.getInstance().reference.child("users").setValue("5")
-        Firebase.database.reference.child("users").setValue("5")
+        Firebase.database.reference.child("users").setValue(user2)
         Toast.makeText(context,"abc",Toast.LENGTH_LONG).show()
     }
 
@@ -134,6 +134,7 @@ class RegisterFragment : Fragment(), RegisterListenner {
 
         Log.d("Register", "check  $check")
         return  check
+
     }
 
 }

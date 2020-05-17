@@ -1,12 +1,13 @@
 package com.example.onlineshopping.ui.fragment.register
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import android.view.inputmethod.InputMethodManager
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.library.baseAdapters.BR
 import androidx.fragment.app.viewModels
@@ -38,8 +39,6 @@ class RegisterFragment : Fragment(), RegisterListenner {
         binding =
             DataBindingUtil.inflate(layoutInflater, R.layout.fragment_register, container, false)
 
-
-
         binding.viewModel = viewmodel
 
         binding.setVariable(BR.registerListenner, this)
@@ -49,7 +48,7 @@ class RegisterFragment : Fragment(), RegisterListenner {
 
         return binding.root
     }
-
+	
     override fun btnRegister(view: View) {
         Toast.makeText(context, "adsc", Toast.LENGTH_LONG).show()
         val email = binding.editEmail.text.toString()
@@ -71,8 +70,27 @@ class RegisterFragment : Fragment(), RegisterListenner {
 
             viewmodel.user = User("", name, email, phone, password)
             register(email, password)
-
         }
+    }
+
+    override  fun btnRegister(view: View) {
+//        Toast.makeText(context, "adsc", Toast.LENGTH_LONG).show()
+//        val email = binding.editEmail.text.toString()
+//        val name = binding.editUserName.text.toString()
+//        val phone = binding.editPhoneNumber.text.toString()
+//        val password = binding.editPassword.text.toString()
+//        val confirmpassword = binding.editConfirm.text.toString()
+//
+//        val check = checkValidate(
+//            email, name, phone, password, confirmpassword
+//        )
+//
+//        if (check) {
+//            viewmodel.user= User("", email, name, phone, password)
+//            register(email, password)
+//        }
+         val user = User("fafsf","afdsfas","afsdfa","afsdfa","afds")
+        writeNewUser(user)
 
     }
 
@@ -84,7 +102,9 @@ class RegisterFragment : Fragment(), RegisterListenner {
             .addOnFailureListener{
                 Log.d("Register", it.toString())
             }
+
         Log.d("Register", "uuid : ${user.uuid}")
+
     }
 
     private fun register(email: String, password: String): Boolean {
@@ -92,6 +112,7 @@ class RegisterFragment : Fragment(), RegisterListenner {
         //if register success is save model and push up database and go to main
         var check = false
         auth.createUserWithEmailAndPassword(email, password).addOnSuccessListener {
+
             viewmodel.user = User(it.user?.uid, viewmodel.user.name, viewmodel.user.email, viewmodel.user.phone, viewmodel.user.password)
             writeNewUser(viewmodel.user)
             findNavController().navigate(R.id.mainFragment)
@@ -102,6 +123,7 @@ class RegisterFragment : Fragment(), RegisterListenner {
                 Log.d("Register", "Register fail  ${it.toString()}")
                 check = false
             }
+
         return check
     }
 
@@ -140,8 +162,8 @@ class RegisterFragment : Fragment(), RegisterListenner {
         } else binding.loConfirmPassword.error = null
 
         Log.d("Register", "check  $check")
-        return check
 
+        return check
     }
 
 }

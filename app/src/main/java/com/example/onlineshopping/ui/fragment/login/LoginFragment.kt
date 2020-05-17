@@ -45,6 +45,7 @@ class LoginFragment : Fragment(), LoginListenner {
     @SuppressLint("ClickableViewAccessibility")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         binding.mainLayout.setOnTouchListener { v, event ->
             val imm =
                 requireActivity().getSystemService(android.content.Context.INPUT_METHOD_SERVICE) as? InputMethodManager
@@ -55,8 +56,8 @@ class LoginFragment : Fragment(), LoginListenner {
     }
 
     override fun btnLogin(view: View) {
-        var username = binding.editEmail.text.toString();
-        var password = binding.editPassword.text.toString();
+        val username = binding.editEmail.text.toString();
+        val password = binding.editPassword.text.toString();
         val check = viewModel.checkValidate(username, password)
 
         Log.d("Login", " check State: $check")

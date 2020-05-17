@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.library.baseAdapters.BR
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.onlineshopping.R
 import com.example.onlineshopping.data.model.User
 import com.example.onlineshopping.databinding.FragmentRegisterBinding
@@ -51,13 +52,13 @@ class RegisterFragment : Fragment(), RegisterListenner {
 
     override fun btnRegister(view: View) {
         Toast.makeText(context, "adsc", Toast.LENGTH_LONG).show()
-        var email = binding.editEmail.text.toString()
-        var name = binding.editUserName.text.toString()
-        var phone = binding.editPhoneNumber.text.toString()
-        var password = binding.editPassword.text.toString()
-        var confirmpassword = binding.editConfirm.text.toString()
+        val email = binding.editEmail.text.toString()
+        val name = binding.editUserName.text.toString()
+        val phone = binding.editPhoneNumber.text.toString()
+        val password = binding.editPassword.text.toString()
+        val confirmpassword = binding.editConfirm.text.toString()
 
-        var check = checkValidate(
+        val check = checkValidate(
             email, name, phone, password, confirmpassword
         )
 
@@ -70,21 +71,30 @@ class RegisterFragment : Fragment(), RegisterListenner {
 
             viewmodel.user = User("", name, email, phone, password)
             register(email, password)
-            writeNewUser(viewmodel.user)
+
         }
 
     }
 
     private fun writeNewUser(user: User) {
-        Firebase.database.reference.child("users").child(user.uuid!!).setValue(user)
+
+        Firebase.database.reference.child("users").child(user.uuid!!).setValue(user).addOnSuccessListener {
+            Log.d("Register", "success")
+        }
+            .addOnFailureListener{
+                Log.d("Register", it.toString())
+            }
         Log.d("Register", "uuid : ${user.uuid}")
     }
 
     private fun register(email: String, password: String): Boolean {
-        var check = false
 
+        //if register success is save model and push up database and go to main
+        var check = false
         auth.createUserWithEmailAndPassword(email, password).addOnSuccessListener {
-            viewmodel.user.uuid = it.user?.uid
+            viewmodel.user = User(it.user?.uid, viewmodel.user.name, viewmodel.user.email, viewmodel.user.phone, viewmodel.user.password)
+            writeNewUser(viewmodel.user)
+            findNavController().navigate(R.id.mainFragment)
             Log.d("Register", "Register success ${it.user?.uid}")
             check = true
         }

@@ -1,4 +1,6 @@
 <resources>
+
+
     <string name="app_name">OnlineShopping</string>
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -52,4 +54,8 @@
     <string name="err_not_phone">Vui lòng nhập chính xác số điện thoại</string>
     <string name="err_not_password">Password không hợp lẹ</string>
     <string name="err_confirmpass">Vui lòng xác nhận lại pass word</string>
+    <string name="flash_sale">Flash Sale</string>
+    <string name="tv_more">Xem thêm</string>
+    <string name="item">item</string>
+
 </resources>

@@ -1,0 +1,28 @@
+<androidx.constraintlayout.widget.ConstraintLayout android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ImageView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/imv"
+        android:adjustViewBounds="true"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_height_viewpage"
+        android:contentDescription="TODO" />
+
+
+    <TextView
+        app:layout_constraintBottom_toBottomOf="@id/imv"
+        app:layout_constraintStart_toStartOf="@id/imv"
+        app:layout_constraintEnd_toEndOf="@id/imv"
+        android:textAlignment="center"
+        android:layout_marginBottom="@dimen/default_margin_large"
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

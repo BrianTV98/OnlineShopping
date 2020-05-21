@@ -1,0 +1,4 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/custom_button_of_like_comment_share"/>
+    <corners android:radius="10dp"/>
+</shape>

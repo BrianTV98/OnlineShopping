@@ -17,4 +17,5 @@ class RegisterViewModel : ViewModel() {
         user.password=pass
         user.phone= phone
     }
+
 }

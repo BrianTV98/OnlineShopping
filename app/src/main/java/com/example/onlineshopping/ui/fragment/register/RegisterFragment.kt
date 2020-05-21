@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.library.baseAdapters.BR
 import androidx.fragment.app.viewModels
@@ -48,8 +49,8 @@ class RegisterFragment : Fragment(), RegisterListenner {
 
         return binding.root
     }
-	
-    override fun btnRegister(view: View) {
+
+    override fun btnRegister(view: View)  {
         Toast.makeText(context, "adsc", Toast.LENGTH_LONG).show()
         val email = binding.editEmail.text.toString()
         val name = binding.editUserName.text.toString()
@@ -73,26 +74,6 @@ class RegisterFragment : Fragment(), RegisterListenner {
         }
     }
 
-    override  fun btnRegister(view: View) {
-//        Toast.makeText(context, "adsc", Toast.LENGTH_LONG).show()
-//        val email = binding.editEmail.text.toString()
-//        val name = binding.editUserName.text.toString()
-//        val phone = binding.editPhoneNumber.text.toString()
-//        val password = binding.editPassword.text.toString()
-//        val confirmpassword = binding.editConfirm.text.toString()
-//
-//        val check = checkValidate(
-//            email, name, phone, password, confirmpassword
-//        )
-//
-//        if (check) {
-//            viewmodel.user= User("", email, name, phone, password)
-//            register(email, password)
-//        }
-         val user = User("fafsf","afdsfas","afsdfa","afsdfa","afds")
-        writeNewUser(user)
-
-    }
 
     private fun writeNewUser(user: User) {
 

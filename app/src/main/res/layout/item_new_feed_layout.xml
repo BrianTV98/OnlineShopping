@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.onlineshopping.data.model.NewFeed" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imv_avata_owner"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="@dimen/default_margin_normal"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="@dimen/default_icon_avata_small"
+            android:src="@drawable/ic_avatar"
+            android:layout_height="@dimen/default_icon_avata_small" />
+
+        <TextView
+            app:layout_constraintTop_toTopOf="@id/imv_avata_owner"
+            app:layout_constraintBottom_toBottomOf="@id/imv_avata_owner"
+            app:layout_constraintStart_toEndOf="@id/imv_avata_owner"
+            android:layout_margin="@dimen/default_margin_normal"
+            android:id="@+id/name_owner"
+            android:text="@{String.valueOf(viewModel.owner)}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/btn_more"
+            android:src="@drawable/ic_more"
+            android:layout_width="@dimen/default_icon_avata_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="15dp"
+            android:layout_margin="@dimen/default_margin_normal"
+            app:layout_constraintTop_toTopOf="@id/imv_avata_owner"
+            app:layout_constraintBottom_toBottomOf="@id/imv_avata_owner"
+            android:layout_height="@dimen/default_icon_avata_small"
+            android:contentDescription="@string/avata_of_owner" />
+
+        <com.borjabravo.readmoretextview.ReadMoreTextView
+            android:id="@+id/tv_content"
+            app:layout_constraintTop_toBottomOf="@id/imv_avata_owner"
+            android:layout_margin="@dimen/default_margin_normal"
+            app:trimExpandedText="@string/show_more"
+            app:trimCollapsedText="@string/show_less"
+            app:trimMode="trimModeLine"
+            app:trimLines="3"
+            app:colorClickableText="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/imv_media"
+            android:layout_marginTop="@dimen/default_margin_normal"
+            app:layout_constraintTop_toBottomOf="@id/tv_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_picture"
+            android:imageUrl="@{viewModel.imageUrl}"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:contentDescription="@string/image_for_review" />
+
+        <LinearLayout
+            app:layout_constraintTop_toBottomOf="@id/imv_media"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_like"
+                android:layout_margin="@dimen/default_margin_small"
+                android:layout_weight="1"
+                android:text="@string/like"
+                android:textAllCaps="false"
+                android:drawableStart="@drawable/ic_like"
+                android:paddingStart="@dimen/default_pading_small"
+                android:paddingEnd="@dimen/default_pading_small"
+                android:background="@drawable/custom_button_like"
+                android:layout_width="wrap_content"
+                android:textSize="12sp"
+                android:layout_height="wrap_content" />
+
+
+            <Button
+                android:id="@+id/btn_commnent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_margin_small"
+                android:layout_weight="1"
+                android:background="@drawable/custom_button_like"
+                android:drawableStart="@drawable/ic_comment"
+                android:paddingStart="@dimen/default_pading_small"
+                android:paddingEnd="@dimen/default_pading_small"
+                android:text="@string/comment"
+                android:textSize="12sp"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_margin_small"
+                android:layout_weight="1"
+                android:background="@drawable/custom_button_like"
+                android:drawableStart="@drawable/ic_share"
+                android:paddingStart="@dimen/default_pading_small"
+                android:paddingEnd="@dimen/default_pading_small"
+                android:text="@string/share"
+                android:textSize="12sp"
+                android:textAllCaps="false" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

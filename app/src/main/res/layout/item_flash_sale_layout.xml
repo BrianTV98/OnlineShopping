@@ -1,43 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
         <variable
             name="flashViewModel"
-            type="com.example.onlineshopping.ui.fragment.home.widget.flash_sale.FlashViewModel" />
+            type="com.example.onlineshopping.data.model.FlashSale" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
-        android:background="@color/bg_item_flash_sale"
+        android:background="@drawable/bg_item_flash_sale"
+        android:layout_margin="@dimen/default_margin_normal"
         android:layout_height="wrap_content">
 
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/imv_item"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="@dimen/default_size_imv_item"
+            android:imageUrl="@{flashViewModel.imagUrl}"
+            app:riv_corner_radius_top_left="10dp"
+            app:riv_corner_radius_top_right="10dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintCircleRadius="5dp"
+            android:layout_height="@dimen/default_size_imv_item"
+            android:contentDescription="@string/item" />
         <TextView
             android:id="@+id/tv_discount"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="@{flashViewModel.flashSale.discount}"
+            android:text='@{"-"+ String.valueOf(flashViewModel.discount)+ "%"}'
+            android:textStyle="bold|italic"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="@dimen/default_margin_small"
+            android:layout_marginEnd="@dimen/default_margin_small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-        <ImageView
-            android:id="@+id/imv_item"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_width="120dp"
-            app:layout_constraintCircleRadius="5dp"
-            android:background="@color/colorPrimary"
-            android:layout_height="120dp"
-            android:contentDescription="@string/item" />
 
         <TextView
             android:id="@+id/tv_price"
             app:layout_constraintTop_toBottomOf="@id/imv_item"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="@{flashViewModel.flashSale.price.toString()}"
+            android:text='@{String.valueOf(flashViewModel.price)+ "đ"}'
             android:padding="5dp"
+            android:layout_marginTop="@dimen/default_margin_small"
             android:textColor="@android:color/white"
             android:background="@drawable/custom_backgroud_tv_price"
             android:layout_width="match_parent"
@@ -47,8 +58,9 @@
             android:id="@+id/tv_inventory"
             app:layout_constraintTop_toBottomOf="@id/tv_price"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="Số lượng tồn"
+            android:text='@{"Tồn kho: " + flashViewModel.inventory}'
             android:textColor="@android:color/holo_red_light"
+            android:layout_marginEnd="@dimen/default_margin_small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 

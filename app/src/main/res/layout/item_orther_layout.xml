@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.onlineshopping.data.model.Appliances" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin_normal"
+        android:background="@drawable/bg_item_flash_sale">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/imv_item"
+            app:layout_constraintTop_toTopOf="parent"
+            android:imageUrl="@{viewModel.imageUrl}"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:riv_corner_radius_top_right="10dp"
+            app:riv_corner_radius_top_left="10dp"
+            android:layout_width="@dimen/default_size_imv_item"
+            android:layout_height="@dimen/default_size_imv_item" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            app:layout_constraintTop_toBottomOf="@id/imv_item"
+            app:layout_constraintStart_toStartOf="@id/imv_item"
+            app:layout_constraintEnd_toEndOf="@id/imv_item"
+            android:layout_marginTop="@dimen/default_margin_normal"
+            android:text="@{viewModel.name}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:text="@{String.valueOf(viewModel.price)}"
+            app:layout_constraintTop_toBottomOf="@id/tv_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:paddingEnd="@dimen/default_margin_small"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

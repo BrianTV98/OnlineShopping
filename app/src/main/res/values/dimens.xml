@@ -8,4 +8,7 @@
     <dimen name="default_icon_normal">50dp</dimen>
     <dimen name="default_icon_small">32dp</dimen>
     <dimen name="default_height_viewpage">150dp</dimen>
+    <dimen name="default_size_imv_item">120dp</dimen>
+    <dimen name="default_icon_avata_small">50dp</dimen>
+    <dimen name="default_pading_small">8dp</dimen>
 </resources>

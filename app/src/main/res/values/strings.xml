@@ -57,5 +57,16 @@
     <string name="flash_sale">Flash Sale</string>
     <string name="tv_more">Xem thêm</string>
     <string name="item">item</string>
+    <string name="appliance">Đồ gia dụng</string>
+    <string name="technology">Công nghệ</string>
+    <string name="orther_item">Sản phẩm khác</string>
+    <string name="avata_of_owner">avata</string>
+    <string name="image_for_review">image review</string>
+    <string name="like">like</string>
+    <string name="comment">comment</string>
+    <string name="share">share</string>
+    <string name="input_commnet">nhập nội dung</string>
+    <string name="show_more">xem thêm</string>
+    <string name="show_less">ẩn bớt</string>
 
 </resources>

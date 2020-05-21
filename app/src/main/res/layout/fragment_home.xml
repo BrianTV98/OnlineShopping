@@ -77,11 +77,34 @@
 
                 <androidx.fragment.app.FragmentContainerView
                     android:id="@+id/fragment_viewpage"
-                    android:name="com.example.onlineshopping.ui.fragment.home.ViewPagerFragment"
+                    android:name="com.example.onlineshopping.ui.fragment.home.widget.viewpager.ViewPagerFragment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/fragment_flashSale"
+                    android:name="com.example.onlineshopping.ui.fragment.home.widget.flash_sale.FlashSaleFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/fragment_appliance"
+                    android:name="com.example.onlineshopping.ui.fragment.home.widget.appliances.AppliancesFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/fragment_technology"
+                    android:name="com.example.onlineshopping.ui.fragment.home.widget.technology.TechnologyFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/fragment_orther"
+                    android:name="com.example.onlineshopping.ui.fragment.home.widget.ortherItem.OrtherItemFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
             </LinearLayout>
         </ScrollView>
-
     </LinearLayout>
 </layout>

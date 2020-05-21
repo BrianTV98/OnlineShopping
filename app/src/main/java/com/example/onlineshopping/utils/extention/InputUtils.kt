@@ -1,6 +1,7 @@
 package com.example.onlineshopping.utils.extention
 
 import android.text.TextUtils
+import androidx.annotation.IntegerRes
 import java.util.regex.Pattern
 
 fun String.isEmailValid(): Boolean {
@@ -28,4 +29,9 @@ fun isLengthDecimalValid(value: Double, roundTo: Int): Boolean {
     val pattern = Pattern.compile(expression)
     val matcher = pattern.matcher(value.toString())
     return matcher.matches()
+}
+
+
+fun InttoString(value : Int ?): String?{
+    return value.toString()
 }

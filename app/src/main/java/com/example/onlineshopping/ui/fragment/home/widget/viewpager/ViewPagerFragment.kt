@@ -26,8 +26,8 @@ class ViewPagerFragment : Fragment() {
     lateinit var binding : FragmentViewPagerBinding
     var current_position =0
     var time = Timer()
-
-
+    val handler = Handler()
+    var Update =Runnable{}
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -71,7 +71,6 @@ class ViewPagerFragment : Fragment() {
             val imageView = ImageView(requireContext())
             var param :LinearLayout.LayoutParams=LinearLayout.LayoutParams(20, 20)
             param.setMargins(10,0,10,5)
-
             imageView.layoutParams = param // value is in pixels
             if(i==currentSlidePosition){
                 imageView.setImageResource(R.drawable.active_dot)
@@ -82,10 +81,15 @@ class ViewPagerFragment : Fragment() {
         }
 
     }
-
+    private var runnable: Runnable = object : Runnable {
+        override fun run() {
+            /* Do something very important */
+//            handler.postDelayed(this, 5000)
+        }
+    }
     private fun createSlideShow(maxSize :Int) {
-        val handler = Handler()
-        val Update = Runnable {
+
+        Update = Runnable {
             if (current_position == maxSize) {
                 current_position = 0
             }
@@ -98,6 +102,11 @@ class ViewPagerFragment : Fragment() {
                 handler.post(Update)
             }
         }, 500, 2500)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        time.cancel()
     }
 
 }

@@ -6,7 +6,7 @@
     <color name="yellow">#CDDC39</color>
     <color name="active_dot">#3DA833</color>
     <color name="in_active_dot">#FFF0F0</color>
-    <color name="bg_item_flash_sale">#716868</color>
+    <color name="bg_item_flash_sale">#CDC8C8</color>
     <array name="bg_color">
         <item name="bg_screen1">#f64c73</item>
         <item name="bg_screen2">#20d2bb</item>

@@ -6,6 +6,7 @@ import com.example.onlineshopping.data.model.FlashSale
 
 class FlashViewModel : ViewModel(){
 
-    val flashSale =ObservableField<FlashSale>()
+    var flashSale = FlashSale()
+
 
 }

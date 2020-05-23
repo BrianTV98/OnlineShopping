@@ -20,7 +20,6 @@ class SnackAdapter(val fragment: Fragment, val viewModel: SnackViewModel) :
     RecyclerView.Adapter<SnackAdapter.NewFeedViewHolder>() {
 
     class NewFeedViewHolder(view: ItemNewFeedLayoutBinding) : RecyclerView.ViewHolder(view.root) {
-
         val binding: ItemNewFeedLayoutBinding = view
 
     }

@@ -40,7 +40,7 @@ class FlashSaleFragment : Fragment() {
         binding = DataBindingUtil.inflate(layoutInflater, R.layout.fragment_flash_sale, container, false)
 
         binding.lifecycleOwner = viewLifecycleOwner
-//        getData()
+        getData()
         return binding.root
     }
 
@@ -49,15 +49,14 @@ class FlashSaleFragment : Fragment() {
         initView()
     }
     private fun initView() {
-
         rcv_flash_sale.apply {
             adapter = RecycleViewFlashSaleApdater(context,listFlashSaleItem)
             layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
         }
-
     }
     private fun getData() {
         val viewModel : FlashViewModel by viewModels<FlashViewModel>()
+
         Firebase.database.reference.child("flashSale").addValueEventListener(object : ValueEventListener{
             override fun onCancelled(p0: DatabaseError) {
                 Log.d("FlashShale","Load Data :False")
@@ -75,6 +74,7 @@ class FlashSaleFragment : Fragment() {
                 }
                 rcv_flash_sale.adapter?.notifyDataSetChanged()
             }
+
         })
     }
 

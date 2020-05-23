@@ -1,6 +1,7 @@
 package com.example.onlineshopping.ui.fragment.main
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.onlineshopping.R
 import com.example.onlineshopping.databinding.FragmentMainBinding
+import com.example.onlineshopping.ui.fragment.account.AccountFragment
 import com.example.onlineshopping.ui.fragment.snack.SnackFragment
 import com.example.onlineshopping.ui.fragment.cart.CartFragment
 import com.example.onlineshopping.ui.fragment.home.HomeFragment
@@ -30,6 +32,8 @@ class MainFragment : Fragment() {
             by lazy { MessageFragment() }
     private val cartFragment
             by lazy { CartFragment() }
+    private val accountFragment
+            by lazy { AccountFragment() }
 
     lateinit var binding : FragmentMainBinding
 
@@ -41,15 +45,14 @@ class MainFragment : Fragment() {
 
         binding= DataBindingUtil.inflate(layoutInflater,R.layout.fragment_main, container, false )
 
-
         binding.lifecycleOwner =viewLifecycleOwner
 
         requireActivity().supportFragmentManager.beginTransaction()
             .add(R.id.container, homeFragment)
             .commit()
 
-
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -69,13 +72,6 @@ class MainFragment : Fragment() {
                     true
                 }
 
-                R.id.message_nav -> {
-                    if (idMenuSelected != R.id.message_nav) {
-                        idMenuSelected = R.id.message_nav
-                        openFragment(messageFragment)
-                    }
-                    true
-                }
                 R.id.live_nav -> {
                     if (idMenuSelected != R.id.live_nav) {
                         idMenuSelected = R.id.live_nav
@@ -84,10 +80,20 @@ class MainFragment : Fragment() {
                     true
                 }
 
-                R.id.cartFragment -> {
+                R.id.cart_nav -> {
+                    Log.d("MainFragment", "car_nav")
                     if (idMenuSelected != R.id.cartFragment) {
                         idMenuSelected = R.id.cartFragment
                         openFragment(cartFragment)
+                    }
+                    true
+                }
+
+                R.id.account_nav -> {
+                    Log.d("MainFragment", "car_nav")
+                    if (idMenuSelected != R.id.account_nav) {
+                        idMenuSelected = R.id.account_nav
+                        openFragment(accountFragment)
                     }
                     true
                 }

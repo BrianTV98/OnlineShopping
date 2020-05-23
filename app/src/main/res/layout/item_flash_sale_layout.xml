@@ -28,6 +28,16 @@
             app:layout_constraintCircleRadius="5dp"
             android:layout_height="@dimen/default_size_imv_item"
             android:contentDescription="@string/item" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/imv_item"
+            app:layout_constraintStart_toStartOf="@id/imv_item"
+            android:text="@{flashViewModel.name}"
+            app:layout_constraintEnd_toEndOf="@id/imv_item"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content"/>
+
         <TextView
             android:id="@+id/tv_discount"
             app:layout_constraintTop_toTopOf="parent"
@@ -39,7 +49,6 @@
             android:layout_marginEnd="@dimen/default_margin_small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-
 
         <TextView
             android:id="@+id/tv_price"

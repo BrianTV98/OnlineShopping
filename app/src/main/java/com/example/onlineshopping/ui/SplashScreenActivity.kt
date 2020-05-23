@@ -4,11 +4,24 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModel
 import com.example.onlineshopping.R
+import com.example.onlineshopping.data.model.NewFeed
+import com.example.onlineshopping.databinding.ItemNewFeedLayoutBinding
 import com.example.onlineshopping.ui.base.BaseActivity
 import com.example.onlineshopping.ui.fragment.MainActivity
+import com.example.onlineshopping.ui.fragment.snack.SnackViewModel
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import dagger.android.AndroidInjection
+import kotlinx.android.synthetic.main.fragment_main.*
 
 class SplashScreenActivity : AppCompatActivity() {
 
@@ -20,4 +33,5 @@ class SplashScreenActivity : AppCompatActivity() {
             finish()
         }, 1000)
     }
+
 }

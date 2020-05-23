@@ -34,8 +34,11 @@ class TechnologyFragment : Fragment() {
     ): View? {
 
         binding = DataBindingUtil.inflate(layoutInflater,R.layout.fragment_technology, container, false)
+
         binding.rcv.adapter = TechnologyAdapter(this)
+
         binding.rcv.layoutManager= GridLayoutManager(context,2, GridLayoutManager.HORIZONTAL,false)
+
         return binding.root
 
     }

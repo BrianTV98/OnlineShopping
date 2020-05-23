@@ -83,8 +83,8 @@ class SnackFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        Log.d("Snack", "Attach")
         getData()
+        Log.d("Snack", "Attach")
         Log.d("Snack",  viewModel.listNewFeed.size.toString())
     }
 

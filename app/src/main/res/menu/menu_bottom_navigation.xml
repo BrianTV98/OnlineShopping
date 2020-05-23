@@ -11,11 +11,6 @@
         android:icon="@drawable/live_state"
         android:contentDescription="@string/live"/>
 
-    <item android:id="@+id/message_nav"
-        android:title="@string/message"
-        android:icon="@drawable/mess_state"
-        android:contentDescription="@string/message"/>
-
     <item android:id="@+id/cart_nav"
         android:title="@string/cart"
         android:icon="@drawable/cart_state"

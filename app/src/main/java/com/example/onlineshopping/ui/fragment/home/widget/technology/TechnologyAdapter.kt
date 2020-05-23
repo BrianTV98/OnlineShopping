@@ -1,5 +1,6 @@
 package com.example.onlineshopping.ui.fragment.home.widget.technology
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,6 +33,7 @@ class TechnologyAdapter (val fragment: Fragment): RecyclerView.Adapter<Technolog
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.binding.viewModel = viewModel.listItemTechnology[position]
+        Log.d("Technology",viewModel.listItemTechnology[position].imageUrl)
         holder.itemView.setOnClickListener{
             Toast.makeText(fragment.context,position.toString(), Toast.LENGTH_LONG ).show()
         }

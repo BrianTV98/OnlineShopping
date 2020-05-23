@@ -6,11 +6,14 @@ import android.os.Binder
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.example.onlineshopping.R
@@ -33,19 +36,39 @@ class HomeFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(layoutInflater,R.layout.fragment_home, container, false)
         binding.lifecycleOwner= viewLifecycleOwner
+//        hideKeyboardTouchScreen()
+        binding.imvScannerQrCode.setOnClickListener {
+            findNavController().navigate(R.id.qrCodeFragment)
+        }
         return binding.root
     }
-
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
         Log.d("Snack", "Attach")
     }
 
+    private fun hideKeyboardTouchScreen() {
+        lo_main_home.setOnTouchListener { v, event ->
+            if (event != null && event.action == MotionEvent.ACTION_MOVE) {
+                val imm =
+                    requireActivity().getSystemService(android.content.Context.INPUT_METHOD_SERVICE) as? InputMethodManager
+                val isHide = imm!!.isAcceptingText()
+                if (isHide) {
+                    imm?.hideSoftInputFromWindow(requireActivity()!!.currentFocus?.windowToken, 0)
+                }
+                true
+            }
+            false
+        }
+    }
+
+
     override fun onStart() {
         super.onStart()
         Log.d("Snack", "OnStart")
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d("Snack", "Oncreate")
@@ -75,6 +98,7 @@ class HomeFragment : Fragment() {
         super.onDestroy()
         Log.d("Home", "OnDetroy")
     }
+
     override fun onResume() {
         super.onResume()
         Log.d("Home", "OnResume")

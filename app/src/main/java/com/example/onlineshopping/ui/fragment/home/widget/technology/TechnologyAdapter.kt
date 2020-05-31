@@ -8,13 +8,15 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.onlineshopping.R
+import com.example.onlineshopping.data.model.Technology
 import com.example.onlineshopping.databinding.ItemTechnologyLayoutBinding
 
 
-class TechnologyAdapter (val fragment: Fragment): RecyclerView.Adapter<TechnologyAdapter.ViewHolder>(){
-    var viewModel  : TechnologyViewModel = ViewModelProviders.of(fragment).get(TechnologyViewModel::class.java)
+class TechnologyAdapter (val fragment: Fragment,val list : ArrayList<Technology>): RecyclerView.Adapter<TechnologyAdapter.ViewHolder>(){
+//    var viewModel  : TechnologyViewModel = ViewModelProviders.of(fragment).get(TechnologyViewModel::class.java)
 
     class ViewHolder(view : ItemTechnologyLayoutBinding) : RecyclerView.ViewHolder(view.root){
         val binding : ItemTechnologyLayoutBinding = view
@@ -28,14 +30,18 @@ class TechnologyAdapter (val fragment: Fragment): RecyclerView.Adapter<Technolog
     }
 
     override fun getItemCount(): Int {
-        return viewModel.listItemTechnology.size
+//        return viewModel.listItemTechnology.size
+        return list.size;
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.binding.viewModel = viewModel.listItemTechnology[position]
-        Log.d("Technology",viewModel.listItemTechnology[position].imageUrl)
+//        holder.binding.viewModel = viewModel.listItemTechnology[position]
+//        Log.d("Technology",viewModel.listItemTechnology[position].imageUrl)
+        holder.binding.viewModel = list[position]
+        Log.d("Technology",list[position].imageUrl)
         holder.itemView.setOnClickListener{
             Toast.makeText(fragment.context,position.toString(), Toast.LENGTH_LONG ).show()
+            NavHostFragment.findNavController(fragment).navigate(R.id.detailItemFragment)
         }
     }
 

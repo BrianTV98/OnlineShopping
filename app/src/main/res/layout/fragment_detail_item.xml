@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        tools:context=".DetailItemFragment">
+
+
+        <ImageView
+            android:id="@+id/imv_detail"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/default_size_imv_detail_item"
+            android:background="@color/colorAccent"
+            android:contentDescription="@string/image_for_review"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/name_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_margin_normal"
+            android:layout_marginTop="@dimen/default_margin_small"
+            android:text="tên sản phẩm"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/default_font_size_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imv_detail" />
+
+        <LinearLayout
+            android:id="@+id/lo_rake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_margin_normal"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name_detail"
+            app:layout_goneMarginStart="@dimen/default_margin_small">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_star_black_24dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_star_black_24dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_star_black_24dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_star_half_black_24dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_star_border_black_24dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_margin_normal"
+            android:layout_marginTop="@dimen/default_margin_small"
+            android:text="25000 đ "
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="@dimen/default_font_size_title"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lo_rake" />
+
+        <TextView
+            android:id="@+id/tv_infor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin_small"
+            android:background="@color/green"
+            android:paddingStart="@dimen/default_margin_normal"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="@string/detail_infor"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/default_font_small_size_title"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_price" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/tv_infor">
+
+            <TextView
+                android:id="@+id/storge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/default_margin_normal"
+                android:paddingTop="@dimen/default_margin_small"
+                android:text="kho" />
+
+            <TextView
+                android:id="@+id/tv_made_in"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/default_margin_normal"
+                android:paddingTop="@dimen/default_margin_small"
+                android:text="xuat xu" />
+
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/default_margin_normal"
+                android:paddingTop="@dimen/default_margin_small"
+                android:text="dia chi shop" />
+
+            <View
+                android:background="@android:color/darker_gray"
+                android:layout_marginStart="@dimen/default_margin_normal"
+                android:layout_marginEnd="@dimen/default_margin_normal"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/default_margin_small"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:id="@+id/tv_decription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin_normal"
+                android:layout_marginTop="@dimen/default_margin_small"
+                android:layout_marginEnd="@dimen/default_margin_normal"
+                android:textAlignment="center"
+                android:text="Mô tả san pham" />
+
+            <TextView
+                android:id="@+id/detail_decription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            android:elevation="4dp"
+            android:layout_height="wrap_content">
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:orientation="vertical"
+               android:layout_height="wrap_content">
+                <View
+                    android:layout_width="match_parent"
+                    android:background="@drawable/custom_gradient"
+                    android:layout_height="2dp"/>
+               <LinearLayout
+                   android:orientation="horizontal"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+
+                   <Button
+                       android:id="@+id/btn_comback"
+                       android:layout_weight="1"
+                       android:drawableTop="@drawable/ic_arrow_back_black_24dp"
+                       android:layout_width="wrap_content"
+                       android:background="@android:color/white"
+                       android:textColor="@android:color/black"
+                       android:paddingTop="@dimen/default_pading_small"
+                       android:textAllCaps="false"
+                       android:text="@string/come_back"
+                       android:layout_height="match_parent"/>
+
+                   <Button
+                       android:id="@+id/btn_add_item"
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                       android:layout_weight="1"
+                       android:paddingTop="@dimen/default_pading_small"
+                       android:background="@drawable/custom_backgroud_btn_add_cart"
+                       android:drawableTop="@drawable/ic_add_shopping_cart_black_24dp"
+                       android:paddingLeft="@dimen/default_margin_normal"
+                       android:text="@string/add_shopping_cart"
+                       android:textAllCaps="false"
+                       android:textColor="@android:color/white" />
+               </LinearLayout>
+
+           </LinearLayout>
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

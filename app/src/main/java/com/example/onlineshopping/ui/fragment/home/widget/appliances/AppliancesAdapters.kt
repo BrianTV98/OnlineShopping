@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.onlineshopping.R
 import com.example.onlineshopping.data.model.Appliances
@@ -39,7 +40,7 @@ class AppliancesAdapters(val fragment: Fragment) : RecyclerView.Adapter<Applianc
 
         holder.binding.viewModel = viewModel.appliances[position]
         holder.itemView.setOnClickListener{
-            Toast.makeText(fragment.context,position.toString(), Toast.LENGTH_LONG ).show()
+            NavController(fragment.context).navigate(R.id.detailItemFragment)
         }
 
     }

@@ -11,4 +11,6 @@
     <dimen name="default_size_imv_item">120dp</dimen>
     <dimen name="default_icon_avata_small">50dp</dimen>
     <dimen name="default_pading_small">8dp</dimen>
+    <dimen name="default_size_imv_detail_item">300dp</dimen>
+    <dimen name="default_font_small_size_title">20sp</dimen>
 </resources>

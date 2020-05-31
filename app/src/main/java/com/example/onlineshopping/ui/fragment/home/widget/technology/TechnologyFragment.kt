@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 
 import com.example.onlineshopping.R
@@ -20,6 +21,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.fragment_home.*
 
 /**
  * A simple [Fragment] subclass.
@@ -35,9 +37,17 @@ class TechnologyFragment : Fragment() {
 
         binding = DataBindingUtil.inflate(layoutInflater,R.layout.fragment_technology, container, false)
 
-        binding.rcv.adapter = TechnologyAdapter(this)
+        binding.rcv.adapter = TechnologyAdapter(this, viewModel.listItemTechnology)
 
         binding.rcv.layoutManager= GridLayoutManager(context,2, GridLayoutManager.HORIZONTAL,false)
+
+
+        viewModel.progress.observe(viewLifecycleOwner, Observer {
+            if(it == 0){
+
+            }
+
+        })
 
         return binding.root
 
@@ -66,7 +76,10 @@ class TechnologyFragment : Fragment() {
                     Log.d("FlashShale", tmp!!.name)
                     viewModel.addItem(tmp)
                 }
+
                 binding.rcv.adapter?.notifyDataSetChanged()
+                binding.progressBar.visibility = View.GONE
+
             }
         })
     }

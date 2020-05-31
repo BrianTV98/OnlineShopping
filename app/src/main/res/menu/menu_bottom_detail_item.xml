@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/item_comeback"
+        android:title="Thoat"
+        android:icon="@drawable/ic_arrow_back_black_24dp"/>
+
+    <item android:id="@+id/item_add_cart"
+        android:title="Them vao gio hang"
+        android:icon="@drawable/ic_cart"/>
+
+</menu>

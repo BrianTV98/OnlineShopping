@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
@@ -26,7 +27,7 @@ import kotlinx.android.synthetic.main.fragment_flash_sale.*
 /**
  * A simple [Fragment] subclass.
  */
-class AppliancesFragment : Fragment() {
+class AppliancesFragment : Fragment() , AdapterView.OnItemClickListener{
 
     lateinit var binding: FragmentAppliancesBinding
     val viewModel : AppliancesViewModel by viewModels<AppliancesViewModel>()
@@ -74,9 +75,15 @@ class AppliancesFragment : Fragment() {
                     Log.d("FlashShale", tmp!!.name)
                     viewModel.addItem(tmp)
                 }
+
                 binding.rcvAppliances.adapter?.notifyDataSetChanged()
+
             }
         })
+    }
+
+    override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+
     }
 
 }

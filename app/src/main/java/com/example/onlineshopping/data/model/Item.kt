@@ -1,9 +1,6 @@
 package com.example.onlineshopping.data.model
 
-import android.accounts.AuthenticatorDescription
-import java.net.Inet4Address
-
-data class Appliances  (
+data class Item(
     val id: Long,
     val name: String,
     val description: String,
@@ -13,5 +10,7 @@ data class Appliances  (
     val madeIn: String,
     val addressShop : String
 ){
+
     constructor(): this(id=0L, name = "",description = "", price = 0F, imageUrl = "", idStore=0L,madeIn = "", addressShop = "")
+
 }

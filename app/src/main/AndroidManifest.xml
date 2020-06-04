@@ -17,6 +17,7 @@
         android:supportsRtl="true"
         android:backupInForeground="true"
         android:theme="@style/AppTheme.SplashScreen" >
+
         <activity android:name=".ui.fragment.MainActivity" android:theme="@style/AppTheme"/>
 
         <activity android:name=".ui.SplashScreenActivity">

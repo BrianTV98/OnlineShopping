@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.onlineshopping.R
 import com.example.onlineshopping.databinding.FragmentMainBinding
 import com.example.onlineshopping.ui.fragment.account.AccountFragment
@@ -50,6 +51,8 @@ class MainFragment : Fragment() {
         requireActivity().supportFragmentManager.beginTransaction()
             .add(R.id.container, homeFragment)
             .commit()
+
+
 
         return binding.root
 

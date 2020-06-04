@@ -9,11 +9,14 @@ import com.example.onlineshopping.BR
 import com.example.onlineshopping.data.model.Appliances
 
 class AppliancesViewModel : ViewModel(){
+
     var appliances  = ArrayList<Appliances>()
 
+    var positionSelected  = MutableLiveData<Int>()
 
     fun  addItem(item : Appliances){
         appliances.add(item)
     }
+
 
 }

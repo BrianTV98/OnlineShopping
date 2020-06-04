@@ -31,6 +31,11 @@ class AppliancesFragment : Fragment() , AdapterView.OnItemClickListener{
 
     lateinit var binding: FragmentAppliancesBinding
     val viewModel : AppliancesViewModel by viewModels<AppliancesViewModel>()
+
+    companion object{
+        var  listItem = ArrayList<Appliances>()
+
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -58,8 +63,10 @@ class AppliancesFragment : Fragment() , AdapterView.OnItemClickListener{
         getData()
     }
     private fun getData() {
+
         Firebase.database.reference.child("appliances").addValueEventListener(object :
             ValueEventListener {
+
             override fun onCancelled(p0: DatabaseError) {
                 Log.d("Appliances","Load Data :False")
             }
@@ -70,10 +77,13 @@ class AppliancesFragment : Fragment() , AdapterView.OnItemClickListener{
                 val data = p0.children
                 Log.d("Appliances", p0.value.toString())
                 viewModel.appliances.clear()
+                listItem.clear()
+
                 data.forEach{
                     val tmp = it.getValue(Appliances::class.java)
                     Log.d("FlashShale", tmp!!.name)
                     viewModel.addItem(tmp)
+                    listItem.add(tmp);
                 }
 
                 binding.rcvAppliances.adapter?.notifyDataSetChanged()

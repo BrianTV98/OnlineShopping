@@ -71,5 +71,9 @@
     <string name="detail_infor">Thông tin chi tiết</string>
     <string name="add_shopping_cart">Thêm vào giỏ hàng</string>
     <string name="come_back">Quay lại</string>
+    <string name="sumPrice">Tổng giá trị mặt giỏ hàng</string>
+    <string name="ship_cost">Phí Shipp</string>
+    <string name="sum_cost">"Tổng tiền thanh toán: "</string>
+    <string name="pay">Thanh Toán</string>
 
 </resources>

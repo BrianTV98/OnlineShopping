@@ -22,6 +22,8 @@ import com.example.onlineshopping.ui.fragment.message.MessageFragment
  */
 class MainFragment : Fragment() {
 
+
+
     var idMenuSelected: Int = R.id.hom_nav
 
     private val homeFragment
@@ -47,6 +49,7 @@ class MainFragment : Fragment() {
         binding= DataBindingUtil.inflate(layoutInflater,R.layout.fragment_main, container, false )
 
         binding.lifecycleOwner =viewLifecycleOwner
+
 
         requireActivity().supportFragmentManager.beginTransaction()
             .add(R.id.container, homeFragment)

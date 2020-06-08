@@ -48,6 +48,7 @@ class AppliancesAdapters(val fragment: Fragment) : RecyclerView.Adapter<Applianc
 
         holder.binding.viewModel = viewModel.appliances[position]
         holder.itemView.setOnClickListener{
+
             positionSelected =position
             val action = MainFragmentDirections.actionMainFragmentToDetailItemFragment(position)
             findNavController(fragment).navigate(action)

@@ -1,110 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragment.cart.CartFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.recyclerview.widget.RecyclerView
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="@dimen/default_margin_normal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+    <data>
+
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/lo_pay"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.cart.CartFragment">
 
-        <TextView
-            android:id="@+id/tv_sumPrice"
-            android:layout_marginTop="@dimen/default_margin_normal"
-            android:layout_marginStart="@dimen/default_margin_normal"
-            app:layout_constraintStart_toStartOf="parent"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv"
             app:layout_constraintTop_toTopOf="parent"
-            android:text="@string/sumPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:id="@+id/tv_cost"
-            android:layout_marginTop="@dimen/default_margin_normal"
-            android:layout_marginStart="@dimen/default_margin_normal"
-            android:layout_marginEnd="@dimen/default_margin_normal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:text="0 Đ"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:id="@+id/shipcost"
-            android:layout_marginTop="@dimen/default_margin_normal"
-            android:layout_marginStart="@dimen/default_margin_normal"
-            app:layout_constraintTop_toBottomOf="@id/tv_sumPrice"
             app:layout_constraintStart_toStartOf="parent"
-            android:text="@string/ship_cost"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:id="@+id/tv_shipcost"
-            android:layout_marginTop="@dimen/default_margin_normal"
-            android:layout_marginStart="@dimen/default_margin_normal"
-            app:layout_constraintTop_toBottomOf="@id/tv_sumPrice"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="@dimen/default_margin_normal"
-            android:text="0D"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <View
-            android:layout_width="0dp"
-            android:background="@android:color/black"
-            app:layout_constraintTop_toBottomOf="@id/tv_shipcost"
-            app:layout_constraintEnd_toEndOf="@id/tv_shipcost"
-            app:layout_constraintStart_toStartOf="@id/tv_shipcost"
-            android:layout_height="1dp"/>
-
-        <TextView
-            android:id="@+id/sumcost"
-            android:layout_marginTop="@dimen/default_margin_normal"
-            android:layout_marginStart="@dimen/default_margin_normal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/shipcost"
-            android:text="@string/sum_cost"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-
-        <TextView
-            android:id="@+id/tv_sumcost"
-            android:layout_marginTop="@dimen/default_margin_normal"
-            android:layout_marginStart="@dimen/default_margin_normal"
-            app:layout_constraintTop_toBottomOf="@id/shipcost"
-            android:text="0d"
-            android:layout_marginEnd="@dimen/default_margin_normal"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <Button
-            app:layout_constraintTop_toBottomOf="@id/tv_sumcost"
-            android:padding="@dimen/default_pading_small"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:background="@drawable/custom_backgroud_btn_add_cart"
             android:layout_margin="@dimen/default_margin_normal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/lo_pay"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="@string/pay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_sumPrice"
+                android:layout_marginTop="@dimen/default_margin_normal"
+                android:layout_marginStart="@dimen/default_margin_normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/sumPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_cost"
+                android:layout_marginTop="@dimen/default_margin_normal"
+                android:layout_marginStart="@dimen/default_margin_normal"
+                android:layout_marginEnd="@dimen/default_margin_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="0 Đ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/shipcost"
+                android:layout_marginTop="@dimen/default_margin_normal"
+                android:layout_marginStart="@dimen/default_margin_normal"
+                app:layout_constraintTop_toBottomOf="@id/tv_sumPrice"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="@string/ship_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_shipcost"
+                android:layout_marginTop="@dimen/default_margin_normal"
+                android:layout_marginStart="@dimen/default_margin_normal"
+                app:layout_constraintTop_toBottomOf="@id/tv_sumPrice"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/default_margin_normal"
+                android:text="0D"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:layout_width="0dp"
+                android:background="@android:color/black"
+                app:layout_constraintTop_toBottomOf="@id/tv_shipcost"
+                app:layout_constraintEnd_toEndOf="@id/tv_shipcost"
+                app:layout_constraintStart_toStartOf="@id/tv_shipcost"
+                android:layout_height="1dp" />
+
+            <TextView
+                android:id="@+id/sumcost"
+                android:layout_marginTop="@dimen/default_margin_normal"
+                android:layout_marginStart="@dimen/default_margin_normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/shipcost"
+                android:text="@string/sum_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:id="@+id/tv_sumcost"
+                android:layout_marginTop="@dimen/default_margin_normal"
+                android:layout_marginStart="@dimen/default_margin_normal"
+                app:layout_constraintTop_toBottomOf="@id/shipcost"
+                android:text="0d"
+                android:layout_marginEnd="@dimen/default_margin_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button
+                app:layout_constraintTop_toBottomOf="@id/tv_sumcost"
+                android:padding="@dimen/default_pading_small"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="@color/colorAccent"
+                android:layout_margin="@dimen/default_margin_normal"
+                android:id="@+id/back_home"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="@string/back_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <Button
+                app:layout_constraintTop_toBottomOf="@id/tv_sumcost"
+                android:padding="@dimen/default_pading_small"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="@drawable/custom_backgroud_btn_add_cart"
+                android:layout_margin="@dimen/default_margin_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@string/pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
